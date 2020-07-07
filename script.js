@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const apiRoot = 'https://mysterious-mesa-46681.herokuapp.com/v1/';
+  const apiRoot = 'https://mysterious-mesa-46681.herokuapp.com/v1/task/';
   const trelloApiRoot = 'https://shielded-brook-40087.herokuapp.com/v1/trello/';
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
@@ -108,7 +108,7 @@ $(document).ready(function() {
   function handleTaskDeleteRequest() {
     var parentEl = $(this).parents('[data-task-id]');
     var taskId = parentEl.attr('data-task-id');
-    var requestUrl = apiRoot + 'deleteTask';
+    var requestUrl = apiRoot + 'tasks';
 
     $.ajax({
       url: requestUrl + '/' + taskId,
